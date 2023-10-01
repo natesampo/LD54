@@ -3273,6 +3273,13 @@ class Game {
 				this.context.fillText('Playing. Press Space to Reset', this.canvas.width/2, 90);
 			}
 
+			if (this.level == 1) {
+				this.context.fillStyle = 'rgba(0, 0, 0, 1)';
+				this.context.fillText('Get the yellow box into the yellow goal to win!', this.canvas.width/2, 150);
+				this.context.fillText('You may only build in the green limited space', this.canvas.width/2, 180);
+				this.context.fillText('Right click on objects you\'ve created to change their properties', this.canvas.width/2, 210);
+			}
+
 			if (this.victory && this.victoryScreenY != null) {
 				this.context.fillStyle = 'rgba(255, 255, 255, 1)';
 				this.context.strokeStyle = 'rgba(0, 0, 0, 1)';
