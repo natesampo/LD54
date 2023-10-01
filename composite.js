@@ -32,6 +32,12 @@ class CompositeObject {
 		}
 	}
 
+	applyTorque(torque) {
+		for (var i=0; i<this.objects.length; i++) {
+			this.objects[i].angularVelocity += torque;
+		}
+	}
+
 	translate(vector) {
 		for (var i=0; i<this.objects.length; i++) {
 			this.objects[i].translate(vector);

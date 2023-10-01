@@ -307,7 +307,7 @@ class Collision {
 	positionalCorrection() {
 		if (this.body1.getMass() + this.body2.getMass() > 0) {
 			let slack = 0.01;
-			let percent = 0.3;
+			let percent = 0.5;
 
 			let correction = (Math.max(this.penetration - slack, 0) / (this.body1.getInvMass() + this.body2.getInvMass())) * percent;
 			let correctionVector = this.normal.copy();

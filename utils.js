@@ -50,6 +50,14 @@ function getDistance(vector1, vector2) {
 	return Math.sqrt(a * a + b * b);
 }
 
+function pointToLineDistance(point, vector1, vector2) {
+	let a = vector1.y - vector2.y;
+	let b = vector2.x - vector1.x;
+	let c = (vector1.x - vector2.x) * vector1.y + (vector2.y - vector1.y) * vector1.x;
+
+	return Math.abs(a * point.x + b * point.y + c) / Math.sqrt(a * a + b * b);
+}
+
 function areaOfTriangle(vector1, vector2, vector3) {
 	return Math.abs((vector2.x * vector1.y - vector1.x * vector2.y) +
 					(vector3.x * vector2.y - vector2.x * vector3.y) +
