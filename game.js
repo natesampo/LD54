@@ -2586,13 +2586,13 @@ class Game {
 								let update = false;
 								if (game.topScores[game.level] && game.topScores[game.level][0] && game.topScores[game.level][0].length > 0) {
 									for (var j=0; j<game.topScores[game.level][0].length; j++) {
-										if (game.username == game.topScores[game.level][0][j][0]) {
-											break;
-										}
-
 										if (game.levelTicks < game.topScores[game.level][0][j][1]) {
 											game.topScores[game.level][0].splice(j, 0, [game.username, game.levelTicks, game.playerParts]);
 											update = true;
+											break;
+										}
+
+										if (game.username == game.topScores[game.level][0][j][0]) {
 											break;
 										}
 
@@ -2616,13 +2616,13 @@ class Game {
 
 								if (game.topScores[game.level] && game.topScores[game.level][1] && game.topScores[game.level][1].length > 0) {
 									for (var j=0; j<game.topScores[game.level][1].length; j++) {
-										if (game.username == game.topScores[game.level][1][j][0]) {
-											break;
-										}
-
 										if (game.playerParts < game.topScores[game.level][1][j][2]) {
 											game.topScores[game.level][1].splice(j, 0, [game.username, game.levelTicks, game.playerParts]);
 											update = true;
+											break;
+										}
+
+										if (game.username == game.topScores[game.level][1][j][0]) {
 											break;
 										}
 
